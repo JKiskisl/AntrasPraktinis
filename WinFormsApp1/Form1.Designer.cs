@@ -1461,17 +1461,17 @@ namespace WinFormsApp1
             this.dataGridView9.AllowUserToAddRows = false;
             this.dataGridView9.AllowUserToDeleteRows = false;
             this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Location = new System.Drawing.Point(297, 317);
+            this.dataGridView9.Location = new System.Drawing.Point(31, 317);
             this.dataGridView9.Name = "dataGridView9";
             this.dataGridView9.ReadOnly = true;
             this.dataGridView9.RowTemplate.Height = 25;
-            this.dataGridView9.Size = new System.Drawing.Size(621, 265);
+            this.dataGridView9.Size = new System.Drawing.Size(1165, 265);
             this.dataGridView9.TabIndex = 2;
             this.dataGridView9.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView9_CellContentClick);
             // 
             // button38
             // 
-            this.button38.Location = new System.Drawing.Point(1010, 527);
+            this.button38.Location = new System.Drawing.Point(1043, 15);
             this.button38.Name = "button38";
             this.button38.Size = new System.Drawing.Size(153, 55);
             this.button38.TabIndex = 1;
@@ -1495,6 +1495,7 @@ namespace WinFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 824);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
@@ -1504,7 +1505,6 @@ namespace WinFormsApp1
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel10);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";

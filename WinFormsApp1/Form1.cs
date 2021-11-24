@@ -115,9 +115,12 @@ namespace WinFormsApp1
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = @"Data Source=(localdb)\local; Initial Catalog = Praktinis; Integrated security=True;";
             conn.Open();
-            //string select = "select * from tblGrades WHERE StudentID = (SELECT StudentID FROM tblStudents Where Name = '" + textBox1.Text + "')";
+            string select = "SELECT Name, SubjectName, Grade FROM tblGrades JOIN tblStudents " +
+                "ON tblGrades.StudentID = tblStudents.StudentID JOIN tblSubjects " +
+                "ON tblGrades.SubjectID = tblSubjects.SubjectID WHERE tblStudents.StudentID" +
+                " = (SELECT StudentID FROM tblStudents Where Name = '"+textBox1.Text+"')";
             //string select = "Select tblStudents.Name, tblLecturer.Name, tblSubjects.SubjectName, tblGrades.Grade FROM tblGrades INNER JOIN tblStudents ON tblStudents.Name = tblStudents.ID where (SELECT StudentID FROM tblStudents Where Name = '" + textBox1.Text + "')";
-            string select = "SELECT tblSubjects.SubjectName AS Subject, tblGroups.GroupName AS grupe, tblLecturer.Name AS Lecturer, tblGrades.Grade as grades";
+            //string select = "SELECT tblSubjects.SubjectName AS Subject, tblGroups.GroupName AS grupe, tblLecturer.Name AS Lecturer, tblGrades.Grade as grades";
 
             SqlCommand cmd = new SqlCommand(select, conn);
             DataTable dataTable = new DataTable();
@@ -570,9 +573,13 @@ namespace WinFormsApp1
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = @"Data Source=(localdb)\local; Initial Catalog = Praktinis; Integrated security=True;";
             conn.Open();
-            string select = "select * from tblGrades WHERE LecturerID = (SELECT LecturerID FROM tblLecturer Where Name = '" + textBox1.Text + "')";
-            
-            
+            string select = "Select tblSubjects.SubjectID, SubjectName ,tblGroups.GroupID, GroupName, tblStudents.StudentID, Name, LastName, Grade, tblGrades.GradeID " +
+                "FROM tblGrades JOIN tblSubjects ON tblGrades.SubjectID = tblSubjects.SubjectID " +
+                "JOIN tblGroups ON tblGrades.GroupID = tblGroups.GroupID JOIN tblStudents ON tblGrades.StudentID = tblStudents.StudentID " +
+                "WHERE LecturerID = (SELECT LecturerID FROM tblLecturer Where Name = '"+textBox1.Text+ "')";
+
+
+
 
             SqlCommand cmd = new SqlCommand(select, conn);
             DataTable dataTable = new DataTable();
